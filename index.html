@@ -99,6 +99,20 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
 
   <script type="text/javascript">
+  
+  if (bio.skills.length > 0) {
+  	$("#header").append(HTMLskillsStart);
+  	for (var i = 0; i < bio.skills.length; i += 1) {
+  	   $("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
+  	   }
+  }
+  
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    console.log(work.jobs[job].employer);
+    $(".work-entry:last").append(HTMLworkEmployer.replace("%data%",work.jobs[job].employer) +
+    HTMLworkTitle.replace("%data%",work.jobs[job].title));  
+  }
     // Notice how all of a sudden there's JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
     // JavaScript, don't forget the closing script tag with the slash (/).
@@ -114,25 +128,32 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+      //document.getElementById('topContacts').style.display = 'none';
+      document.getElementById('topContacts').style.backgroundColor = 'black';
     }
     if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+      //document.getElementById('header').style.display = 'none';
+      document.getElementById('header').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+      //document.getElementById('workExperience').style.display = 'none';
+      document.getElementById('workExperience').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+      //document.getElementById('projects').style.display = 'none';
+      document.getElementById('projects').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      //document.getElementById('education').style.display = 'none';
+      document.getElementById('education').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('letsConnect').style.display = 'none';
+      //document.getElementById('letsConnect').style.display = 'none';
+      document.getElementById('letsConnect').style.backgroundColor = 'black';
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      //document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.backgroundColor = 'black';
     }
   </script>
 </body>
